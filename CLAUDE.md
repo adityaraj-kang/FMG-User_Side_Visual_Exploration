@@ -1,5 +1,7 @@
 # Find My Genie — Design System Showcase
 
+**Repo:** https://github.com/findmygenie/FMG-User_Side_Visual_Exploration.git
+
 ## What This Project Is
 
 A mobile app design system showcase for **Find My Genie** — an AI-powered service marketplace. The user describes a service need (plumber, towing, electrician, etc.), the AI agent deploys 20+ parallel voice agents to negotiate with vendors, and returns the 2 best deals (cheapest and fastest).
@@ -94,6 +96,20 @@ Weight mappings live in `ServiceIcon.tsx`, `NavIcon.tsx`, and `UtilityIcon.tsx`.
 - Theme-specific branches use `theme.id === 'premium'`, `theme.id === 'apple-ios'`, etc.
 - Components access theme via `const { theme } = useTheme()` then destructure `theme.typography`, `theme.colors`, `theme.spacing`
 - **Adding a new theme:** create `themes/new-theme.ts` → add to `themes/index.ts` array → add weight entry in `icons/ServiceIcon.tsx`, `NavIcon.tsx`, `UtilityIcon.tsx`
+
+## Commands
+
+```bash
+npm run dev     # Start dev server (Vite)
+npm run build   # Production build (outputs to dist/)
+npx tsc --noEmit  # Type check without emitting
+```
+
+## Project History
+
+1. **Session 1:** Built initial 5 theme iterations with Lucide icons, basic SearchBar and RecentActivity
+2. **Session 2:** Content model fix (SearchBar → AI chat entry, RecentActivity → 2 statuses), brand authenticity updates (correct fonts, colors per theme), attempted custom SVG icon sets per theme (40 service + 20 nav icons) — later replaced
+3. **Session 3:** Replaced custom SVGs + Lucide with Phosphor Icons (weight-based theming), renamed Premium → "Current" and applied Genie Design System v3.0 (orange #FF4D00 accent, Outfit + Plus Jakarta Sans, solid surfaces, no glass effects), code cleanup (removed dead Vite scaffold files, updated .gitignore, fixed stale Inter font reference in index.css), created CLAUDE.md, pushed to GitHub
 
 ## Session Maintenance
 

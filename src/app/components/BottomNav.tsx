@@ -19,7 +19,6 @@ export function BottomNav() {
   const { theme } = useTheme();
   const t = theme.typography;
   const c = theme.colors;
-  const s = theme.spacing;
 
   const isMaterial = theme.id === 'material-you';
   const isApple = theme.id === 'apple-ios';

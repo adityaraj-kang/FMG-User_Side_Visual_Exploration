@@ -1,6 +1,6 @@
 # Find My Genie — Design System Showcase
 
-**Repo:** https://github.com/findmygenie/FMG-User_Side_Visual_Exploration.git
+**Repo:** https://github.com/adityaraj-kang/FMG-User_Side_Visual_Exploration.git
 
 ## What This Project Is
 

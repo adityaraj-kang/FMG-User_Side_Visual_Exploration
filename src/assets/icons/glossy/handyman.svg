@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="handy-shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="handy-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF922B"/>
+      <stop offset="100%" stop-color="#CC6F17"/>
+    </linearGradient>
+    <radialGradient id="handy-gloss" cx="0.35" cy="0.25" r="0.7" fx="0.3" fy="0.2">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="handy-depth" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#handy-bg)" filter="url(#handy-shadow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#handy-depth)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#handy-gloss)"/>
+
+  <!-- Hammer icon (white) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Hammer handle (diagonal) -->
+    <line x1="22" y1="48" x2="36" y2="30"/>
+    <!-- Hammer head -->
+    <path d="M33 27l-3-3 12-12 6 6-12 12-3-3" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.5"/>
+    <!-- Claw (curved) at top of hammer head -->
+    <path d="M48 18c2-3 1-7-2-9" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <!-- Handle grip lines -->
+    <line x1="25" y1="44" x2="27" y2="42"/>
+    <line x1="28" y1="41" x2="30" y2="39"/>
+  </g>
+</svg>

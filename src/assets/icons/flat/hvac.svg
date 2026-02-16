@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Snowflake: 6-pointed with bold arms -->
+  <rect x="22" y="4" width="4" height="40" rx="2" fill="#51CF66"/>
+  <rect x="22" y="4" width="4" height="40" rx="2" fill="#51CF66" transform="rotate(60 24 24)"/>
+  <rect x="22" y="4" width="4" height="40" rx="2" fill="#51CF66" transform="rotate(120 24 24)"/>
+  <circle cx="24" cy="24" r="5" fill="#51CF66"/>
+  <!-- Branch tips -->
+  <rect x="22" y="2" width="4" height="6" rx="2" fill="#3EAF52" transform="rotate(30 24 5)"/>
+  <rect x="22" y="2" width="4" height="6" rx="2" fill="#3EAF52" transform="rotate(-30 24 5)"/>
+  <rect x="22" y="40" width="4" height="6" rx="2" fill="#3EAF52" transform="rotate(30 24 43)"/>
+  <rect x="22" y="40" width="4" height="6" rx="2" fill="#3EAF52" transform="rotate(-30 24 43)"/>
+</svg>

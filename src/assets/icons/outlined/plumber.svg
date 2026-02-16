@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
+  <defs>
+    <linearGradient id="wireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00D4AA"/>
+    </linearGradient>
+  </defs>
+  <!-- Wrench head (open jaw) -->
+  <path d="M18 12 L12 18 L12 24 L18 30 L24 30 L30 24" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Jaw opening -->
+  <path d="M18 12 L24 12 L30 18 L30 24" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Wrench handle (diagonal shaft) -->
+  <line x1="27" y1="27" x2="52" y2="52" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Handle grip area -->
+  <rect x="49" y="49" width="12" height="12" rx="2" transform="rotate(45 55 55)" fill="none" stroke="url(#wireGrad)" stroke-width="2"/>
+  <!-- Water drop detail -->
+  <path d="M42 14 Q44 20 42 24 Q40 20 42 14 Z" fill="none" stroke="url(#wireGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Pipe segment top -->
+  <rect x="48" y="8" width="8" height="18" rx="1" fill="none" stroke="url(#wireGrad)" stroke-width="2"/>
+  <!-- Pipe elbow -->
+  <path d="M48 26 L48 32 L56 32 L56 26" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Pipe thread lines -->
+  <line x1="48" y1="12" x2="56" y2="12" fill="none" stroke="url(#wireGrad)" stroke-width="1"/>
+  <line x1="48" y1="16" x2="56" y2="16" fill="none" stroke="url(#wireGrad)" stroke-width="1"/>
+</svg>

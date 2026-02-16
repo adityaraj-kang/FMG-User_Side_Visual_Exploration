@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="roof-shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="roof-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ADB5BD"/>
+      <stop offset="100%" stop-color="#868E96"/>
+    </linearGradient>
+    <radialGradient id="roof-gloss" cx="0.35" cy="0.25" r="0.7" fx="0.3" fy="0.2">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="roof-depth" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#roof-bg)" filter="url(#roof-shadow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#roof-depth)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#roof-gloss)"/>
+
+  <!-- House / roof icon (white) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Roof (triangle) -->
+    <polygon points="32,14 14,32 50,32" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.5"/>
+    <!-- House body -->
+    <rect x="18" y="32" width="28" height="16" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <!-- Door -->
+    <rect x="28" y="38" width="8" height="10" fill="#868E96" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Window left -->
+    <rect x="21" y="35" width="5" height="5" fill="#868E96" stroke="#FFFFFF" stroke-width="1.5" rx="0.5"/>
+    <!-- Window right -->
+    <rect x="38" y="35" width="5" height="5" fill="#868E96" stroke="#FFFFFF" stroke-width="1.5" rx="0.5"/>
+    <!-- Chimney -->
+    <rect x="40" y="18" width="5" height="10" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- Roof accent line -->
+    <line x1="14" y1="32" x2="50" y2="32" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+</svg>

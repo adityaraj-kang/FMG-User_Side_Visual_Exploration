@@ -48,7 +48,7 @@ export const claudeTheme: ThemeTokens = {
   },
   spacing: {
     screenPadding: '24px',
-    sectionGap: '36px',
+    sectionGap: '43px',
     gridGap: '14px',
     cardPadding: '18px',
     borderRadius: '12px',

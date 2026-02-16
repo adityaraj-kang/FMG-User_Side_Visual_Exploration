@@ -7,6 +7,7 @@ import {
   Microphone,
   CaretRight,
   Check,
+  MapPin,
 } from '@phosphor-icons/react';
 import { useTheme } from '../../context/ThemeContext';
 import type { UtilityIconName, PhosphorWeight } from './types';
@@ -21,6 +22,7 @@ const iconMap: Record<UtilityIconName, PhosphorIcon> = {
   mic: Microphone,
   chevronRight: CaretRight,
   check: Check,
+  mapPin: MapPin,
 };
 
 const themeWeights: Record<string, PhosphorWeight> = {
@@ -28,7 +30,20 @@ const themeWeights: Record<string, PhosphorWeight> = {
   'apple-ios': 'regular',
   claude: 'thin',
   uber: 'bold',
+  'designers-choice': 'light',
+  'dc-line-color': 'light',
+  'dc-fill-color': 'light',
   premium: 'regular',
+  // Uber-inspired variations
+  'uber-nightride': 'regular',
+  'uber-grid': 'bold',
+  'uber-signal': 'light',
+  'uber-soft': 'regular',
+  'uber-mono': 'light',
+  // New variations
+  'uber-dash': 'bold',
+  'uber-aura': 'regular',
+  'uber-matrix': 'light',
 };
 
 interface UtilityIconProps {

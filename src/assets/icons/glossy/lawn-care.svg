@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="lawn-shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="lawn-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#69DB7C"/>
+      <stop offset="100%" stop-color="#40B85C"/>
+    </linearGradient>
+    <radialGradient id="lawn-gloss" cx="0.35" cy="0.25" r="0.7" fx="0.3" fy="0.2">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lawn-depth" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#lawn-bg)" filter="url(#lawn-shadow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#lawn-depth)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#lawn-gloss)"/>
+
+  <!-- Tree / leaf icon (white) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Tree trunk -->
+    <line x1="32" y1="38" x2="32" y2="50"/>
+    <!-- Tree crown - layered triangles for pine/tree shape -->
+    <!-- Bottom tier (widest) -->
+    <polygon points="32,16 20,32 26,32 18,40 46,40 38,32 44,32" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- Small roots -->
+    <line x1="32" y1="50" x2="28" y2="50"/>
+    <line x1="32" y1="50" x2="36" y2="50"/>
+    <!-- Ground line -->
+    <line x1="22" y1="50" x2="42" y2="50"/>
+  </g>
+</svg>

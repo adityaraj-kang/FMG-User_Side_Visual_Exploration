@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28">
+  <!-- Isometric Wrench: angular L-shape tool -->
+  <!-- Handle - top face -->
+  <polygon points="4,18 7,15 19,15 16,18" fill="#E0E0E0"/>
+  <!-- Handle - right face -->
+  <polygon points="19,15 16,18 16,20 19,17" fill="#9E9E9E"/>
+  <!-- Handle - left face -->
+  <polygon points="4,18 16,18 16,20 4,20" fill="#BDBDBD"/>
+  <!-- Jaw upper - top face -->
+  <polygon points="16,12 19,9 22,9 19,12" fill="#E0E0E0"/>
+  <!-- Jaw upper - right face -->
+  <polygon points="22,9 19,12 19,14 22,11" fill="#9E9E9E"/>
+  <!-- Jaw upper - front face -->
+  <polygon points="16,12 19,12 19,14 16,14" fill="#BDBDBD"/>
+  <!-- Jaw lower - top face -->
+  <polygon points="16,18 19,15 22,15 19,18" fill="#E0E0E0"/>
+  <!-- Jaw lower - right face (green accent) -->
+  <polygon points="22,15 19,18 19,20 22,17" fill="#00FF88"/>
+  <!-- Jaw lower - front face -->
+  <polygon points="16,18 19,18 19,20 16,20" fill="#BDBDBD"/>
+  <!-- Jaw connector - vertical -->
+  <polygon points="17,14 19,12 19,15 17,17" fill="#9E9E9E"/>
+</svg>

@@ -48,7 +48,7 @@ export const appleIosTheme: ThemeTokens = {
   },
   spacing: {
     screenPadding: '20px',
-    sectionGap: '24px',
+    sectionGap: '18px',
     gridGap: '0px',
     cardPadding: '16px',
     borderRadius: '13px',

@@ -21,7 +21,20 @@ const themeNavWeights: Record<string, { inactive: PhosphorWeight; active: Phosph
   'apple-ios': { inactive: 'regular', active: 'fill' },
   claude: { inactive: 'thin', active: 'light' },
   uber: { inactive: 'bold', active: 'fill' },
+  'designers-choice': { inactive: 'bold', active: 'fill' },
+  'dc-line-color': { inactive: 'bold', active: 'fill' },
+  'dc-fill-color': { inactive: 'bold', active: 'fill' },
   premium: { inactive: 'regular', active: 'fill' },
+  // Uber-inspired variations
+  'uber-nightride': { inactive: 'regular', active: 'fill' },
+  'uber-grid': { inactive: 'bold', active: 'fill' },
+  'uber-signal': { inactive: 'light', active: 'regular' },
+  'uber-soft': { inactive: 'regular', active: 'duotone' },
+  'uber-mono': { inactive: 'light', active: 'bold' },
+  // New variations
+  'uber-dash': { inactive: 'bold', active: 'fill' },
+  'uber-aura': { inactive: 'regular', active: 'fill' },
+  'uber-matrix': { inactive: 'light', active: 'regular' },
 };
 
 interface NavIconProps {

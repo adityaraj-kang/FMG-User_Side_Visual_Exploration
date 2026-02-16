@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="elec-shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="elec-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD43B"/>
+      <stop offset="100%" stop-color="#E6A817"/>
+    </linearGradient>
+    <radialGradient id="elec-gloss" cx="0.35" cy="0.25" r="0.7" fx="0.3" fy="0.2">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="elec-depth" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#elec-bg)" filter="url(#elec-shadow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#elec-depth)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#elec-gloss)"/>
+
+  <!-- Lightning bolt icon (white) -->
+  <g fill="#FFFFFF" stroke="none">
+    <polygon points="35,12 22,34 30,34 27,52 42,28 34,28"/>
+  </g>
+  <!-- Lightning bolt outline for crispness -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-linejoin="round" opacity="0.3">
+    <polygon points="35,12 22,34 30,34 27,52 42,28 34,28"/>
+  </g>
+</svg>

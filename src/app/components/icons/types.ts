@@ -24,6 +24,7 @@ export type UtilityIconName =
   | 'arrowUp'
   | 'mic'
   | 'chevronRight'
-  | 'check';
+  | 'check'
+  | 'mapPin';
 
 export type PhosphorWeight = 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone';

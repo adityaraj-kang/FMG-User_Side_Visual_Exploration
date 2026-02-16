@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Tree: rounded canopy + trunk -->
+  <circle cx="24" cy="16" r="12" fill="#69DB7C"/>
+  <circle cx="16" cy="20" r="8" fill="#69DB7C"/>
+  <circle cx="32" cy="20" r="8" fill="#69DB7C"/>
+  <circle cx="24" cy="12" r="8" fill="#5BC46A"/>
+  <rect x="21" y="26" width="6" height="16" rx="2" fill="#56A663"/>
+  <ellipse cx="24" cy="44" rx="10" ry="3" fill="#69DB7C"/>
+</svg>

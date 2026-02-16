@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
+  <defs>
+    <linearGradient id="wireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00D4AA"/>
+    </linearGradient>
+  </defs>
+  <!-- Tree trunk -->
+  <line x1="36" y1="48" x2="36" y2="64" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Root lines -->
+  <line x1="36" y1="64" x2="28" y2="66" fill="none" stroke="url(#wireGrad)" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="36" y1="64" x2="44" y2="66" fill="none" stroke="url(#wireGrad)" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Tree canopy — three layered triangles -->
+  <!-- Bottom layer (widest) -->
+  <polygon points="36,24 54,48 18,48" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Middle layer -->
+  <polygon points="36,16 50,38 22,38" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Top layer (smallest) -->
+  <polygon points="36,6 46,28 26,28" fill="none" stroke="url(#wireGrad)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Leaf detail — small leaf on the right -->
+  <path d="M52 40 Q58 34 56 28 Q50 34 52 40 Z" fill="none" stroke="url(#wireGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Leaf vein -->
+  <line x1="54" y1="34" x2="52" y2="40" fill="none" stroke="url(#wireGrad)" stroke-width="1" stroke-linecap="round"/>
+</svg>

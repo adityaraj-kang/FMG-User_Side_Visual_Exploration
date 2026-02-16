@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28">
+  <!-- Isometric Bug/Shield: angular shield shape with bug silhouette -->
+  <!-- Shield - top face -->
+  <polygon points="14,3 22,7 14,11 6,7" fill="#E0E0E0"/>
+  <!-- Shield - left face -->
+  <polygon points="6,7 14,11 14,23 6,18" fill="#BDBDBD"/>
+  <!-- Shield - right face -->
+  <polygon points="22,7 14,11 14,23 22,18" fill="#9E9E9E"/>
+  <!-- Shield bottom point -->
+  <polygon points="6,18 14,23 22,18 14,26" fill="#9E9E9E"/>
+  <!-- Bug body - center ellipse approximation -->
+  <polygon points="14,9 17,11 17,15 14,18 11,15 11,11" fill="#BDBDBD"/>
+  <!-- Bug head -->
+  <polygon points="12,9 16,9 15,7 13,7" fill="#9E9E9E"/>
+  <!-- Bug left legs -->
+  <polygon points="11,11 8,10 8,11" fill="#9E9E9E"/>
+  <polygon points="11,13 8,13 8,14" fill="#9E9E9E"/>
+  <polygon points="11,15 8,16 8,17" fill="#9E9E9E"/>
+  <!-- Bug right legs -->
+  <polygon points="17,11 20,10 20,11" fill="#BDBDBD"/>
+  <polygon points="17,13 20,13 20,14" fill="#BDBDBD"/>
+  <polygon points="17,15 20,16 20,17" fill="#BDBDBD"/>
+  <!-- Green accent - crosshair / target reticle -->
+  <polygon points="13,12 15,12 15,14 13,14" fill="#00FF88"/>
+  <!-- Antennae -->
+  <polygon points="13,7 11,5 12,4" fill="#E0E0E0"/>
+  <polygon points="15,7 17,5 16,4" fill="#E0E0E0"/>
+</svg>

@@ -8,6 +8,11 @@ export function Header() {
   const s = theme.spacing;
 
   const headingFont = t.fontFamilyHeading || t.fontFamily;
+  const id = theme.id;
+
+  // Uber-variation specific greeting styles
+  const isUberVariation = id.startsWith('uber-');
+  const isDC = id === 'designers-choice' || id === 'dc-line-color' || id === 'dc-fill-color';
 
   return (
     <div
@@ -15,38 +20,207 @@ export function Header() {
       style={{ padding: `20px ${s.screenPadding} 0` }}
     >
       <div className="flex-1 min-w-0" style={{ paddingRight: '16px' }}>
-        {/* Greeting */}
-        <h1
-          style={{
-            fontFamily: headingFont,
-            fontSize: t.headingSize,
-            fontWeight: t.headingWeight,
-            letterSpacing: t.letterSpacing,
-            color: c.textPrimary,
-            lineHeight: 1.2,
-          }}
-        >
-          Welcome back,{' '}
-          {theme.id === 'premium' ? (
-            <span style={{ color: c.accent }}>Dinesh!</span>
-          ) : (
-            'Dinesh!'
-          )}
-        </h1>
-
-        {/* Subtitle for Apple */}
-        {theme.id === 'apple-ios' && (
-          <p
+        {/* Location pin for Designer's Choice */}
+        {isDC && (
+          <div
+            className="flex items-center"
             style={{
-              fontFamily: t.fontFamily,
-              fontSize: '15px',
-              fontWeight: 400,
-              color: c.textSecondary,
-              marginTop: '4px',
+              gap: '4px',
+              marginBottom: '6px',
             }}
           >
-            Here's what's happening
-          </p>
+            <UtilityIcon name="mapPin" size={14} color={c.textTertiary} />
+            <span
+              style={{
+                fontFamily: t.fontFamily,
+                fontSize: '13px',
+                fontWeight: 500,
+                color: c.textTertiary,
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Atlanta
+            </span>
+          </div>
+        )}
+
+        {/* Greeting — varies per theme */}
+        {id === 'uber-mono' ? (
+          <h1
+            style={{
+              fontFamily: t.fontFamily,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: t.letterSpacing,
+              color: c.textPrimary,
+              lineHeight: 1.2,
+            }}
+          >
+            {'> dinesh'}
+            <span
+              style={{
+                color: c.accent,
+                animation: 'blink 1s step-end infinite',
+              }}
+            >
+              _
+            </span>
+          </h1>
+        ) : id === 'uber-signal' ? (
+          <h1
+            style={{
+              fontFamily: headingFont,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: '0.04em',
+              color: c.textPrimary,
+              lineHeight: 1.1,
+              textTransform: 'uppercase' as const,
+            }}
+          >
+            DINESH
+          </h1>
+        ) : id === 'uber-soft' ? (
+          <div>
+            <p
+              style={{
+                fontFamily: headingFont,
+                fontSize: '18px',
+                fontWeight: 400,
+                color: c.textSecondary,
+                lineHeight: 1.3,
+              }}
+            >
+              Good evening,
+            </p>
+            <h1
+              style={{
+                fontFamily: headingFont,
+                fontSize: t.headingSize,
+                fontWeight: t.headingWeight,
+                letterSpacing: t.letterSpacing,
+                color: c.textPrimary,
+                lineHeight: 1.2,
+              }}
+            >
+              Dinesh
+            </h1>
+          </div>
+        ) : id === 'uber-nightride' ? (
+          <h1
+            style={{
+              fontFamily: headingFont,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: t.letterSpacing,
+              color: c.textPrimary,
+              lineHeight: 1.2,
+            }}
+          >
+            Evening, Dinesh.
+          </h1>
+        ) : id === 'uber-grid' ? (
+          <h1
+            style={{
+              fontFamily: t.fontFamily,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: t.letterSpacing,
+              color: c.textPrimary,
+              lineHeight: 1.2,
+            }}
+          >
+            Hey Dinesh
+          </h1>
+        ) : id === 'uber-dash' ? (
+          <h1
+            style={{
+              fontFamily: headingFont,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: t.letterSpacing,
+              color: c.textPrimary,
+              lineHeight: 1.2,
+            }}
+          >
+            What do you need,{' '}
+            <span style={{ color: c.accent }}>Dinesh?</span>
+          </h1>
+        ) : id === 'uber-aura' ? (
+          <h1
+            style={{
+              fontFamily: t.fontFamily,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: t.letterSpacing,
+              color: c.textPrimary,
+              lineHeight: 1.2,
+            }}
+          >
+            Dinesh.
+          </h1>
+        ) : id === 'uber-matrix' ? (
+          <h1
+            style={{
+              fontFamily: headingFont,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: t.letterSpacing,
+              color: c.textPrimary,
+              lineHeight: 1.2,
+            }}
+          >
+            Evening, Dinesh
+          </h1>
+        ) : isDC ? (
+          <h1
+            style={{
+              fontFamily: headingFont,
+              fontSize: t.headingSize,
+              fontWeight: t.headingWeight,
+              letterSpacing: t.letterSpacing,
+              color: c.textPrimary,
+              lineHeight: 1.2,
+            }}
+          >
+            What do you need,{' '}
+            <span style={{ color: c.accent }}>Dinesh?</span>
+          </h1>
+        ) : (
+          // Default greeting for original 5 themes
+          <>
+            <h1
+              style={{
+                fontFamily: headingFont,
+                fontSize: t.headingSize,
+                fontWeight: t.headingWeight,
+                letterSpacing: t.letterSpacing,
+                color: c.textPrimary,
+                lineHeight: 1.2,
+              }}
+            >
+              Welcome back,{' '}
+              {id === 'premium' ? (
+                <span style={{ color: c.accent }}>Dinesh!</span>
+              ) : (
+                'Dinesh!'
+              )}
+            </h1>
+
+            {id === 'apple-ios' && (
+              <p
+                style={{
+                  fontFamily: t.fontFamily,
+                  fontSize: '15px',
+                  fontWeight: 400,
+                  color: c.textSecondary,
+                  marginTop: '4px',
+                }}
+              >
+                Here's what's happening
+              </p>
+            )}
+          </>
         )}
       </div>
 
@@ -57,23 +231,21 @@ export function Header() {
           width: '44px',
           height: '44px',
           borderRadius:
-            theme.id === 'material-you' || theme.id === 'premium'
+            id === 'material-you' || id === 'premium'
               ? '50%'
-              : theme.id === 'uber'
-                ? s.borderRadius
-                : s.borderRadius,
+              : s.borderRadius,
           background:
-            theme.id === 'material-you'
+            id === 'material-you'
               ? c.accentSoft
-              : theme.id === 'premium'
+              : id === 'premium'
                 ? c.surfaceElevated
-                : theme.id === 'uber'
+                : id === 'uber' || isUberVariation
                   ? 'transparent'
-                  : theme.id === 'claude'
+                  : id === 'claude'
                     ? c.surfaceElevated
                     : 'transparent',
           border:
-            theme.id === 'claude' || theme.id === 'premium'
+            id === 'claude' || id === 'premium'
               ? `1px solid ${c.border}`
               : 'none',
         }}
@@ -82,15 +254,15 @@ export function Header() {
           name="bell"
           size={20}
           color={
-            theme.id === 'material-you'
+            id === 'material-you'
               ? c.accent
-              : theme.id === 'premium'
+              : id === 'premium'
                 ? c.accent
                 : c.textPrimary
           }
         />
         {/* Red notification dot for Apple */}
-        {theme.id === 'apple-ios' && (
+        {id === 'apple-ios' && (
           <div
             className="absolute"
             style={{
@@ -105,6 +277,14 @@ export function Header() {
           />
         )}
       </div>
+
+      {/* Blink animation for Mono terminal cursor */}
+      <style>{`
+        @keyframes blink {
+          0%, 49% { opacity: 1; }
+          50%, 100% { opacity: 0; }
+        }
+      `}</style>
     </div>
   );
 }

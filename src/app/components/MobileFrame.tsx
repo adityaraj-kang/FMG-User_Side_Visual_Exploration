@@ -1,12 +1,13 @@
-import type { ReactNode } from 'react';
+import { forwardRef, type ReactNode } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { StatusBar } from './StatusBar';
 
-export function MobileFrame({ children }: { children: ReactNode }) {
+export const MobileFrame = forwardRef<HTMLDivElement, { children: ReactNode }>(function MobileFrame({ children }, ref) {
   const { theme } = useTheme();
 
   return (
     <div
+      ref={ref}
       className="relative overflow-hidden flex flex-col"
       style={{
         width: '393px',
@@ -50,4 +51,4 @@ export function MobileFrame({ children }: { children: ReactNode }) {
       </div>
     </div>
   );
-}
+});

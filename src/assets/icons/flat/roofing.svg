@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- House with prominent roof -->
+  <polygon points="24,4 4,24 10,24 10,42 38,42 38,24 44,24" fill="#ADB5BD"/>
+  <polygon points="24,4 4,24 44,24" fill="#929AA3"/>
+  <rect x="20" y="28" width="8" height="14" fill="#7D848B"/>
+  <rect x="14" y="18" width="6" height="6" fill="#7D848B"/>
+  <rect x="28" y="18" width="6" height="6" fill="#7D848B"/>
+</svg>

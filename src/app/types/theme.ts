@@ -81,4 +81,13 @@ export interface ThemeTokens {
     glassBorder?: string;
     glassBg?: string;
   };
+  layout?: {
+    suggestionsStyle?: 'grid-4col' | 'horizontal-scroll' | 'grid-2col' | 'pill-categories' | 'bento' | 'vertical-stack' | 'chip-rows' | 'floating-cards' | 'compact-tile-grid';
+    suggestionCardHeight?: string;
+    activityStyle?: 'standard' | 'timeline' | 'minimal' | 'card';
+    headerStyle?: 'standard' | 'compact' | 'hero';
+  };
+  serviceIconStyle?: 'phosphor' | '3d-glossy' | 'flat-vivid' | 'gradient-outlined' | '3d-clay' | '3d-isometric' | 'unicons';
+  serviceIconAssets?: Record<string, string>;
+  serviceSubtitles?: Record<string, string>;
 }

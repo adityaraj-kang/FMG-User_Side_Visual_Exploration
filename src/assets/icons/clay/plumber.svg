@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52">
+  <defs>
+    <radialGradient id="plmBg" cx="40%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#B3D9FF"/>
+      <stop offset="100%" stop-color="#64B5F6"/>
+    </radialGradient>
+    <filter id="plmShadow" x="-10%" y="-5%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="blur"/>
+      <feOffset dx="0" dy="2" result="shifted"/>
+      <feFlood flood-color="#000000" flood-opacity="0.18"/>
+      <feComposite in2="shifted" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Soft clay circle -->
+  <circle cx="26" cy="25" r="22" fill="url(#plmBg)" filter="url(#plmShadow)"/>
+  <!-- Wrench — plump rounded shapes -->
+  <g fill="#FFFFFF" transform="translate(26,25) rotate(-45) translate(-26,-25)">
+    <!-- Handle -->
+    <rect x="22" y="19" width="8" height="22" rx="4" ry="4"/>
+    <!-- Upper jaw -->
+    <path d="M22,19 Q22,12 18,12 Q14,12 14,16 Q14,19 18,20 L22,20 Z" fill="#FFFFFF"/>
+    <!-- Lower jaw -->
+    <path d="M30,19 Q30,12 34,12 Q38,12 38,16 Q38,19 34,20 L30,20 Z" fill="#FFFFFF"/>
+    <!-- Jaw opening -->
+    <ellipse cx="26" cy="14" rx="3" ry="2.5" fill="url(#plmBg)" opacity="0.45"/>
+  </g>
+</svg>

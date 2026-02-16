@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28">
+  <!-- Isometric House: cube base + triangular roof -->
+  <!-- Base cube - top face -->
+  <polygon points="14,14 22,10 26,13 18,17" fill="#E0E0E0"/>
+  <!-- Base cube - left face -->
+  <polygon points="6,13 14,17 14,24 6,20" fill="#BDBDBD"/>
+  <!-- Base cube - right face -->
+  <polygon points="14,17 22,13 22,20 14,24" fill="#9E9E9E"/>
+  <!-- Roof - left slope -->
+  <polygon points="14,4 4,11 14,17" fill="#BDBDBD"/>
+  <!-- Roof - right slope -->
+  <polygon points="14,4 24,11 14,17" fill="#9E9E9E"/>
+  <!-- Roof - ridge highlight (green accent) -->
+  <polygon points="14,4 16,5 24,11 22,12 14,6 6,12 4,11" fill="#00FF88"/>
+  <!-- Door -->
+  <polygon points="12,19 16,17 16,24 12,22" fill="#9E9E9E"/>
+  <!-- Window on left wall -->
+  <polygon points="7,15 10,13 10,17 7,19" fill="#E0E0E0"/>
+  <!-- Chimney - left face -->
+  <polygon points="19,5 20,5 20,9 19,9" fill="#BDBDBD"/>
+  <!-- Chimney - right face -->
+  <polygon points="20,5 21,5.5 21,9.5 20,9" fill="#9E9E9E"/>
+  <!-- Chimney - top face -->
+  <polygon points="19,5 20,4.5 21,5 20,5.5" fill="#E0E0E0"/>
+</svg>

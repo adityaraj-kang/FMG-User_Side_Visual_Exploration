@@ -38,7 +38,7 @@ export const materialYouTheme: ThemeTokens = {
   },
   spacing: {
     screenPadding: '24px',
-    sectionGap: '28px',
+    sectionGap: '12px',
     gridGap: '16px',
     cardPadding: '20px',
     borderRadius: '28px',

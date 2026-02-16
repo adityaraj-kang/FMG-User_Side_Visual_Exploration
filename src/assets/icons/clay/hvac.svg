@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52">
+  <defs>
+    <radialGradient id="hvacBg" cx="40%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#B3E8C0"/>
+      <stop offset="100%" stop-color="#81C784"/>
+    </radialGradient>
+    <filter id="hvacShadow" x="-10%" y="-5%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="blur"/>
+      <feOffset dx="0" dy="2" result="shifted"/>
+      <feFlood flood-color="#000000" flood-opacity="0.18"/>
+      <feComposite in2="shifted" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Soft clay circle -->
+  <circle cx="26" cy="25" r="22" fill="url(#hvacBg)" filter="url(#hvacShadow)"/>
+  <!-- Snowflake — plump rounded forms -->
+  <g fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Vertical arm -->
+    <line x1="26" y1="12" x2="26" y2="38"/>
+    <!-- Diagonal arm 1 -->
+    <line x1="14.7" y1="18.5" x2="37.3" y2="31.5"/>
+    <!-- Diagonal arm 2 -->
+    <line x1="37.3" y1="18.5" x2="14.7" y2="31.5"/>
+    <!-- Top branches -->
+    <line x1="26" y1="12" x2="23" y2="15"/>
+    <line x1="26" y1="12" x2="29" y2="15"/>
+    <!-- Bottom branches -->
+    <line x1="26" y1="38" x2="23" y2="35"/>
+    <line x1="26" y1="38" x2="29" y2="35"/>
+    <!-- Upper-right branches -->
+    <line x1="37.3" y1="18.5" x2="34" y2="17"/>
+    <line x1="37.3" y1="18.5" x2="36" y2="21.5"/>
+    <!-- Lower-left branches -->
+    <line x1="14.7" y1="31.5" x2="18" y2="33"/>
+    <line x1="14.7" y1="31.5" x2="16" y2="28.5"/>
+    <!-- Upper-left branches -->
+    <line x1="14.7" y1="18.5" x2="16" y2="21.5"/>
+    <line x1="14.7" y1="18.5" x2="18" y2="17"/>
+    <!-- Lower-right branches -->
+    <line x1="37.3" y1="31.5" x2="36" y2="28.5"/>
+    <line x1="37.3" y1="31.5" x2="34" y2="33"/>
+    <!-- Center dot for plumpness -->
+    <circle cx="26" cy="25" r="2.5" fill="#FFFFFF" stroke="none"/>
+  </g>
+</svg>

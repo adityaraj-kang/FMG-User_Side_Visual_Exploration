@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="52" height="52">
+  <defs>
+    <radialGradient id="pestBg" cx="40%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#E8C5F0"/>
+      <stop offset="100%" stop-color="#CE93D8"/>
+    </radialGradient>
+    <filter id="pestShadow" x="-10%" y="-5%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="blur"/>
+      <feOffset dx="0" dy="2" result="shifted"/>
+      <feFlood flood-color="#000000" flood-opacity="0.18"/>
+      <feComposite in2="shifted" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Soft clay circle -->
+  <circle cx="26" cy="25" r="22" fill="url(#pestBg)" filter="url(#pestShadow)"/>
+  <!-- Bug — plump rounded forms -->
+  <g fill="#FFFFFF">
+    <!-- Body (abdomen) -->
+    <ellipse cx="26" cy="29" rx="8" ry="9"/>
+    <!-- Head -->
+    <circle cx="26" cy="18" r="5.5"/>
+    <!-- Body segments -->
+    <line x1="18" y1="26" x2="34" y2="26" stroke="url(#pestBg)" stroke-width="1.5" stroke-opacity="0.3"/>
+    <line x1="18.5" y1="31" x2="33.5" y2="31" stroke="url(#pestBg)" stroke-width="1.5" stroke-opacity="0.3"/>
+    <!-- Left legs -->
+    <line x1="19" y1="24" x2="13" y2="20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="18" y1="28" x2="12" y2="28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="19" y1="33" x2="13" y2="36" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Right legs -->
+    <line x1="33" y1="24" x2="39" y2="20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="34" y1="28" x2="40" y2="28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="33" y1="33" x2="39" y2="36" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Antennae -->
+    <line x1="23" y1="14" x2="18" y2="10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="29" y1="14" x2="34" y2="10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <!-- Antenna tips -->
+    <circle cx="18" cy="10" r="1.5"/>
+    <circle cx="34" cy="10" r="1.5"/>
+    <!-- Eyes -->
+    <circle cx="24" cy="17" r="1.5" fill="url(#pestBg)" opacity="0.45"/>
+    <circle cx="28" cy="17" r="1.5" fill="url(#pestBg)" opacity="0.45"/>
+  </g>
+</svg>

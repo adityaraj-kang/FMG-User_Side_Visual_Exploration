@@ -8,15 +8,28 @@ export function SearchBar() {
   const s = theme.spacing;
   const chat = theme.chatInput;
 
-  const isPremium = theme.id === 'premium';
-  const isUber = theme.id === 'uber';
-  const isApple = theme.id === 'apple-ios';
-  const isMaterial = theme.id === 'material-you';
+  const id = theme.id;
+  const isPremium = id === 'premium';
+  const isUber = id === 'uber';
+  const isApple = id === 'apple-ios';
+  const isMaterial = id === 'material-you';
+  const isUberVariation = id.startsWith('uber-');
+  const isDesignersChoice = id === 'designers-choice' || id === 'dc-line-color' || id === 'dc-fill-color';
 
   const placeholder = chat?.placeholder || 'Ask your Genie anything...';
   const leadingIcon = chat?.icon || 'sparkles';
   const trailingIcon = chat?.trailingIcon || 'none';
   const heightOverride = chat?.heightOverride;
+
+  // CTA button color per variation
+  const ctaColor = isUber || isUberVariation || isDesignersChoice
+    ? (c.ctaGreen || c.accent)
+    : c.accent;
+
+  // CTA icon color (dark text on colored button)
+  const ctaIconColor = isUber || isUberVariation || isPremium || isDesignersChoice
+    ? '#000000'
+    : '#FFFFFF';
 
   return (
     <div style={{ padding: `0 ${s.screenPadding}` }}>
@@ -39,13 +52,13 @@ export function SearchBar() {
                 ? c.surface
                 : isApple
                   ? 'rgba(118, 118, 128, 0.12)'
-                  : isUber
-                    ? c.surfaceElevated
-                    : c.surfaceElevated,
+                  : c.surfaceElevated,
           border:
-            theme.id === 'claude' || isPremium
+            id === 'claude' || isPremium
               ? `1px solid ${c.border}`
-              : 'none',
+              : isDesignersChoice
+                ? `1px solid ${c.border}`
+                : 'none',
           padding:
             isApple
               ? '0 10px'
@@ -81,14 +94,26 @@ export function SearchBar() {
           {placeholder}
         </span>
 
-        {/* Trailing icon */}
+        {/* Trailing icon — mic */}
         {trailingIcon === 'mic' && (
-          <UtilityIcon
-            name="mic"
-            size={18}
-            color={isMaterial ? c.accent : c.textTertiary}
-          />
+          <div
+            className="flex items-center justify-center shrink-0"
+            style={{
+              width: '28px',
+              height: '28px',
+              borderRadius: '50%',
+              background: isUberVariation ? ctaColor : 'transparent',
+            }}
+          >
+            <UtilityIcon
+              name="mic"
+              size={18}
+              color={isUberVariation ? ctaIconColor : (isMaterial ? c.accent : c.textTertiary)}
+            />
+          </div>
         )}
+
+        {/* Trailing icon — arrow up */}
         {trailingIcon === 'arrowUp' && (
           <div
             className="flex items-center justify-center shrink-0"
@@ -96,20 +121,13 @@ export function SearchBar() {
               width: '28px',
               height: '28px',
               borderRadius: '50%',
-              background:
-                isUber
-                  ? (c.ctaGreen || '#06C167')
-                  : c.accent,
+              background: ctaColor,
             }}
           >
             <UtilityIcon
               name="arrowUp"
               size={16}
-              color={
-                isUber || isPremium
-                  ? '#000000'
-                  : '#FFFFFF'
-              }
+              color={ctaIconColor}
             />
           </div>
         )}

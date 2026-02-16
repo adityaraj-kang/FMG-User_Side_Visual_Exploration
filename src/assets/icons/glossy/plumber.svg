@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="plumb-shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="plumb-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4DABF7"/>
+      <stop offset="100%" stop-color="#2B7CC9"/>
+    </linearGradient>
+    <radialGradient id="plumb-gloss" cx="0.35" cy="0.25" r="0.7" fx="0.3" fy="0.2">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="plumb-depth" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#plumb-bg)" filter="url(#plumb-shadow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#plumb-depth)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#plumb-gloss)"/>
+
+  <!-- Pipe wrench icon (white) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Wrench handle (diagonal) -->
+    <line x1="18" y1="46" x2="34" y2="30"/>
+    <!-- Wrench jaw - fixed -->
+    <path d="M34 30l4-8 6 3-4 8"/>
+    <!-- Wrench jaw - movable -->
+    <path d="M34 30l8 4 3-6-8-4"/>
+    <!-- Pipe section -->
+    <path d="M38 18c4-1 8 1 10 5s1 8-1 10"/>
+    <!-- Adjustment knob -->
+    <circle cx="30" cy="34" r="2" fill="#FFFFFF" stroke="none"/>
+    <!-- Small detail lines on handle -->
+    <line x1="22" y1="42" x2="24" y2="40"/>
+    <line x1="25" y1="39" x2="27" y2="37"/>
+  </g>
+</svg>

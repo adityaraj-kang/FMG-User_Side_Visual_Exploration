@@ -9,7 +9,7 @@ const activities: ActivityItemData[] = [
     serviceType: 'Plumber',
     status: 'in-progress',
     vendorCount: 12,
-    statusText: 'AI calling plumbers near you...',
+    statusText: 'Genie calling plumbers near you...',
   },
   {
     id: '2',
@@ -30,60 +30,150 @@ export function RecentActivity() {
   const s = theme.spacing;
 
   const headingFont = t.fontFamilyHeading || t.fontFamily;
+  const id = theme.id;
+  const activityStyle = theme.layout?.activityStyle || 'standard';
 
-  if (theme.id === 'apple-ios') {
+  if (id === 'apple-ios') {
     return <AppleActivityView />;
   }
 
+  // Section header text varies by theme
+  const sectionTitle = id === 'uber-mono'
+    ? 'recent.activity'
+    : id === 'uber-signal'
+      ? 'Recent'
+      : id === 'uber-grid'
+        ? 'Activity'
+        : 'Recent Activity';
+
   return (
     <div style={{ padding: `0 ${s.screenPadding}` }}>
-      <div className="flex items-center justify-between" style={{ marginBottom: '14px' }}>
+      <div className="flex items-center justify-between" style={{ marginBottom: '10px' }}>
         <h2
           style={{
-            fontFamily: headingFont,
+            fontFamily: id === 'uber-mono' ? t.fontFamily : headingFont,
             fontSize: t.sectionSize,
             fontWeight: t.sectionWeight,
             letterSpacing: t.letterSpacing,
-            color: c.textPrimary,
+            color: id === 'uber-mono' ? c.accent : c.textPrimary,
+            textTransform: id === 'uber-signal' ? 'uppercase' as const : 'none' as const,
           }}
         >
-          Recent Activity
+          {sectionTitle}
         </h2>
       </div>
 
-      <div
-        style={{
-          background: c.cardBg,
-          borderRadius: s.borderRadius,
-          border:
-            theme.id === 'claude' || theme.id === 'premium'
-              ? `1px solid ${c.border}`
-              : 'none',
-          boxShadow: theme.effects?.cardShadow || 'none',
-          overflow: 'hidden',
-        }}
-      >
-        {activities.map((activity, i) => (
-          <div key={activity.id}>
-            <div style={{ padding: s.cardPadding }}>
+      {/* Card style: separate cards per activity (Soft) */}
+      {activityStyle === 'card' ? (
+        <div className="flex flex-col" style={{ gap: '12px' }}>
+          {activities.map((activity) => (
+            <div
+              key={activity.id}
+              style={{
+                background: c.cardBg,
+                borderRadius: s.borderRadius,
+                padding: s.cardPadding,
+                boxShadow: theme.effects?.cardShadow || 'none',
+              }}
+            >
               {activity.status === 'in-progress' ? (
                 <InProgressRow activity={activity} />
               ) : (
                 <ServedRow activity={activity} />
               )}
             </div>
-            {i < activities.length - 1 && (
-              <div
-                style={{
-                  height: '0.5px',
-                  background: c.divider,
-                  marginLeft: theme.id === 'uber' ? s.cardPadding : '56px',
-                }}
-              />
-            )}
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : activityStyle === 'timeline' ? (
+        /* Timeline style: left accent bar (Nightride) */
+        <div
+          style={{
+            background: c.cardBg,
+            borderRadius: s.borderRadius,
+            overflow: 'hidden',
+          }}
+        >
+          {activities.map((activity, i) => {
+            const barColor = activity.status === 'in-progress'
+              ? (c.statusActive || c.accent)
+              : (c.statusServed || '#06C167');
+            return (
+              <div key={activity.id}>
+                <div
+                  style={{
+                    padding: s.cardPadding,
+                    borderLeft: `2px solid ${barColor}`,
+                  }}
+                >
+                  {activity.status === 'in-progress' ? (
+                    <InProgressRow activity={activity} />
+                  ) : (
+                    <ServedRow activity={activity} />
+                  )}
+                </div>
+                {i < activities.length - 1 && (
+                  <div style={{ height: '0.5px', background: c.divider, marginLeft: s.cardPadding }} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      ) : activityStyle === 'minimal' ? (
+        /* Minimal style: bare rows, no card wrapper (Grid, Signal, Mono) */
+        <div>
+          {activities.map((activity, i) => (
+            <div key={activity.id}>
+              <div style={{ padding: `${s.cardPadding} 0` }}>
+                {id === 'uber-mono' ? (
+                  <MonoActivityRow activity={activity} />
+                ) : activity.status === 'in-progress' ? (
+                  <InProgressRow activity={activity} />
+                ) : (
+                  <ServedRow activity={activity} />
+                )}
+              </div>
+              {i < activities.length - 1 && (
+                <div style={{ height: '0.5px', background: c.divider }} />
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        /* Standard style: grouped card (original themes) */
+        <div
+          style={{
+            background: c.cardBg,
+            borderRadius: s.borderRadius,
+            border:
+              id === 'claude' || id === 'premium'
+                ? `1px solid ${c.border}`
+                : 'none',
+            boxShadow: theme.effects?.cardShadow || 'none',
+            overflow: 'hidden',
+          }}
+        >
+          {activities.map((activity, i) => (
+            <div key={activity.id}>
+              <div style={{ padding: s.cardPadding }}>
+                {activity.status === 'in-progress' ? (
+                  <InProgressRow activity={activity} />
+                ) : (
+                  <ServedRow activity={activity} />
+                )}
+              </div>
+              {i < activities.length - 1 && (
+                <div
+                  style={{
+                    height: '0.5px',
+                    background: c.divider,
+                    marginLeft: id === 'uber' || id === 'designers-choice' || id === 'dc-line-color' || id === 'dc-fill-color' ? s.cardPadding : '56px',
+                  }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
 
       <style>{`
         @keyframes pulse {
@@ -95,17 +185,61 @@ export function RecentActivity() {
   );
 }
 
+/* ─── Mono terminal-style activity row ─── */
+function MonoActivityRow({ activity }: { activity: ActivityItemData }) {
+  const { theme } = useTheme();
+  const t = theme.typography;
+  const c = theme.colors;
+
+  if (activity.status === 'in-progress') {
+    return (
+      <div>
+        <p style={{ fontFamily: t.fontFamily, fontSize: t.bodySize, color: c.textPrimary }}>
+          <span style={{ color: c.textTertiary }}>{'> '}</span>
+          {activity.serviceType.toLowerCase()}: scanning...{' '}
+          <span style={{ color: c.accent }}>{'[||||'}</span>
+          <span style={{ color: c.textTertiary }}>{'..]'}</span>
+          <span style={{ fontFamily: t.fontFamily, fontSize: t.captionSize, color: c.textTertiary, marginLeft: '8px' }}>now</span>
+        </p>
+      </div>
+    );
+  }
+
+  // Served
+  return (
+    <div>
+      <p style={{ fontFamily: t.fontFamily, fontSize: t.bodySize, color: c.textPrimary }}>
+        <span style={{ color: c.textTertiary }}>{'> '}</span>
+        {activity.serviceType.toLowerCase()}: resolved{' '}
+        <span style={{ color: c.accent }}>[ok]</span>{' '}
+        {activity.deals && (
+          <span style={{ color: c.textSecondary }}>
+            [{activity.deals[0].price}, {activity.deals[1].eta}]
+          </span>
+        )}
+        <span style={{ fontFamily: t.fontFamily, fontSize: t.captionSize, color: c.textTertiary, marginLeft: '8px' }}>
+          {activity.completedAt}
+        </span>
+      </p>
+    </div>
+  );
+}
+
+/* ─── In-progress row (shared by most styles) ─── */
 function InProgressRow({ activity }: { activity: ActivityItemData }) {
   const { theme } = useTheme();
   const t = theme.typography;
   const c = theme.colors;
 
-  const statusColor = c.statusActive || c.accent;
+  const isDesignersChoice = theme.id === 'designers-choice' || theme.id === 'dc-line-color' || theme.id === 'dc-fill-color';
+  const statusColor = isDesignersChoice ? '#FF4D00' : (c.statusActive || c.accent);
   const isUber = theme.id === 'uber';
+  const isUberVariation = theme.id.startsWith('uber-');
+  const hideIcon = isUber || isUberVariation || isDesignersChoice;
 
   return (
     <div className="flex items-start gap-3">
-      {!isUber && (
+      {!hideIcon && (
         <div
           className="flex items-center justify-center shrink-0"
           style={{
@@ -180,12 +314,13 @@ function InProgressRow({ activity }: { activity: ActivityItemData }) {
           color: c.textTertiary,
         }}
       >
-        Just now
+        {isDesignersChoice ? 'Requested 2 min ago' : 'Just now'}
       </span>
     </div>
   );
 }
 
+/* ─── Served row (shared by most styles) ─── */
 function ServedRow({ activity }: { activity: ActivityItemData }) {
   const { theme } = useTheme();
   const t = theme.typography;
@@ -194,10 +329,13 @@ function ServedRow({ activity }: { activity: ActivityItemData }) {
   const servedColor = c.statusServed || '#34C759';
   const isUber = theme.id === 'uber';
   const isPremium = theme.id === 'premium';
+  const isUberVariation = theme.id.startsWith('uber-');
+  const isDesignersChoice = theme.id === 'designers-choice' || theme.id === 'dc-line-color' || theme.id === 'dc-fill-color';
+  const hideIcon = isUber || isUberVariation || isDesignersChoice;
 
   return (
     <div className="flex items-start gap-3">
-      {!isUber && (
+      {!hideIcon && (
         <div
           className="flex items-center justify-center shrink-0"
           style={{
@@ -247,7 +385,7 @@ function ServedRow({ activity }: { activity: ActivityItemData }) {
                 color:
                   isPremium
                     ? c.accent
-                    : isUber
+                    : isUber || isUberVariation || isDesignersChoice
                       ? (c.ctaGreen || '#06C167')
                       : servedColor,
                 fontSize: '11px',
@@ -274,6 +412,7 @@ function ServedRow({ activity }: { activity: ActivityItemData }) {
   );
 }
 
+/* ─── Apple iOS activity view ─── */
 function AppleActivityView() {
   const { theme } = useTheme();
   const t = theme.typography;

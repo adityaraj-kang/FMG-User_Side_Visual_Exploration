@@ -15,15 +15,28 @@ const navItems: NavItem[] = [
   { label: 'Profile', iconName: 'profile', isActive: false },
 ];
 
+// Mono theme uses lowercase, developer-friendly labels
+const monoLabels: Record<string, string> = {
+  Home: 'home',
+  Services: 'grid',
+  Activity: 'logs',
+  Profile: 'user',
+};
+
 export function BottomNav() {
   const { theme } = useTheme();
   const t = theme.typography;
   const c = theme.colors;
 
-  const isMaterial = theme.id === 'material-you';
-  const isApple = theme.id === 'apple-ios';
-  const isUber = theme.id === 'uber';
-  const isPremium = theme.id === 'premium';
+  const id = theme.id;
+  const isMaterial = id === 'material-you';
+  const isApple = id === 'apple-ios';
+  const isUber = id === 'uber';
+  const isPremium = id === 'premium';
+  const isUberVariation = id.startsWith('uber-');
+  const isDesignersChoice = id === 'designers-choice' || id === 'dc-line-color' || id === 'dc-fill-color';
+  const isMono = id === 'uber-mono';
+  const isSoft = id === 'uber-soft';
 
   return (
     <div
@@ -32,7 +45,7 @@ export function BottomNav() {
         background:
           isPremium
             ? c.surface
-            : isUber
+            : isUber || isUberVariation || isDesignersChoice
               ? c.background
               : isMaterial
                 ? c.cardBg
@@ -40,13 +53,13 @@ export function BottomNav() {
                   ? '#FBFBFD'
                   : c.background,
         borderTop:
-          isUber
+          isUber || isUberVariation || isDesignersChoice
             ? 'none'
             : isPremium
               ? `1px solid ${c.border}`
               : isApple
                 ? '0.5px solid rgba(0,0,0,0.08)'
-                : theme.id === 'claude'
+                : id === 'claude'
                   ? `0.5px solid ${c.border}`
                   : 'none',
         ...(isPremium && {
@@ -59,6 +72,7 @@ export function BottomNav() {
       <div className="flex items-start justify-around">
         {navItems.map((item) => {
           const color = item.isActive ? c.navActive : c.navInactive;
+          const label = isMono ? monoLabels[item.label] : item.label;
 
           return (
             <button
@@ -88,6 +102,20 @@ export function BottomNav() {
                 />
               )}
 
+              {/* Soft theme active glow */}
+              {isSoft && item.isActive && (
+                <div
+                  className="absolute"
+                  style={{
+                    top: '2px',
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    background: `radial-gradient(circle, ${c.accentSoft} 0%, transparent 70%)`,
+                  }}
+                />
+              )}
+
               <div className="relative z-10">
                 <NavIcon
                   name={item.iconName}
@@ -105,14 +133,14 @@ export function BottomNav() {
                     isApple ? '10px' : t.captionSize,
                   fontWeight:
                     item.isActive
-                      ? (isMaterial ? 700 : isUber ? 600 : 600)
+                      ? (isMaterial ? 700 : isUber || isUberVariation ? 600 : 600)
                       : (isApple ? 400 : 500),
                   color,
                   marginTop: isMaterial ? '4px' : '2px',
                   letterSpacing: '0em',
                 }}
               >
-                {item.label}
+                {label}
               </span>
 
             </button>

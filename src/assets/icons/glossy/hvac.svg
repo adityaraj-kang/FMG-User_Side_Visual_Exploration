@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <filter id="hvac-shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="hvac-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#51CF66"/>
+      <stop offset="100%" stop-color="#2EA043"/>
+    </linearGradient>
+    <radialGradient id="hvac-gloss" cx="0.35" cy="0.25" r="0.7" fx="0.3" fy="0.2">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hvac-depth" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#hvac-bg)" filter="url(#hvac-shadow)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#hvac-depth)"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" ry="14" fill="url(#hvac-gloss)"/>
+
+  <!-- Snowflake icon (white) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Vertical main arm -->
+    <line x1="32" y1="14" x2="32" y2="50"/>
+    <!-- Horizontal main arm -->
+    <line x1="15" y1="32" x2="49" y2="32"/>
+    <!-- Diagonal arm (top-left to bottom-right) -->
+    <line x1="19.3" y1="19.3" x2="44.7" y2="44.7"/>
+    <!-- Diagonal arm (top-right to bottom-left) -->
+    <line x1="44.7" y1="19.3" x2="19.3" y2="44.7"/>
+    <!-- Top branches -->
+    <line x1="32" y1="14" x2="28" y2="18"/>
+    <line x1="32" y1="14" x2="36" y2="18"/>
+    <!-- Bottom branches -->
+    <line x1="32" y1="50" x2="28" y2="46"/>
+    <line x1="32" y1="50" x2="36" y2="46"/>
+    <!-- Left branches -->
+    <line x1="15" y1="32" x2="19" y2="28"/>
+    <line x1="15" y1="32" x2="19" y2="36"/>
+    <!-- Right branches -->
+    <line x1="49" y1="32" x2="45" y2="28"/>
+    <line x1="49" y1="32" x2="45" y2="36"/>
+    <!-- Center diamond accent -->
+    <circle cx="32" cy="32" r="3" fill="#FFFFFF" stroke="none" opacity="0.6"/>
+  </g>
+</svg>

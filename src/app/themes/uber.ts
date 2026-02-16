@@ -48,7 +48,7 @@ export const uberTheme: ThemeTokens = {
   },
   spacing: {
     screenPadding: '16px',
-    sectionGap: '24px',
+    sectionGap: '47px',
     gridGap: '12px',
     cardPadding: '16px',
     borderRadius: '8px',

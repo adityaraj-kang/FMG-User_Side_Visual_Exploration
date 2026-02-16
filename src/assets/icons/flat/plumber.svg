@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Pipe wrench: angled handle + jaw -->
+  <rect x="6" y="28" width="28" height="6" rx="2" transform="rotate(-35 20 31)" fill="#4DABF7"/>
+  <path d="M30 10 L38 10 L38 24 L34 28 L30 28 L30 24 L34 24 L34 14 L30 14 Z" fill="#4DABF7"/>
+  <rect x="28" y="12" width="4" height="18" rx="1" fill="#3A8FD4"/>
+  <path d="M36 10 L40 10 L40 16 L38 20 L36 20 Z" fill="#3A8FD4"/>
+</svg>

@@ -48,7 +48,7 @@ export const premiumTheme: ThemeTokens = {
   },
   spacing: {
     screenPadding: '24px',
-    sectionGap: '32px',
+    sectionGap: '34px',
     gridGap: '16px',
     cardPadding: '16px',
     borderRadius: '12px',

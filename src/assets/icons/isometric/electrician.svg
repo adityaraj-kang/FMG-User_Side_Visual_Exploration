@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28">
+  <!-- Isometric Lightning Bolt: zigzag planes with depth -->
+  <!-- Main bolt - left face (lighter) -->
+  <polygon points="16,2 10,12 13,12 8,24 10,24 10,14 7,14 14,2" fill="#BDBDBD"/>
+  <!-- Main bolt - right face (darker) -->
+  <polygon points="16,2 18,3 12,13 15,13 10,25 8,24 13,12 10,12" fill="#9E9E9E"/>
+  <!-- Top section - top face -->
+  <polygon points="14,2 16,2 18,3 16,3" fill="#E0E0E0"/>
+  <!-- Middle bar - top face -->
+  <polygon points="10,12 13,12 15,13 12,13" fill="#E0E0E0"/>
+  <!-- Green accent face - the front plane of the zigzag center -->
+  <polygon points="13,12 15,13 10,25 8,24" fill="#00FF88"/>
+  <!-- Bottom tip highlight -->
+  <polygon points="8,24 10,25 10,24" fill="#E0E0E0"/>
+  <!-- Depth edge on top segment -->
+  <polygon points="16,2 18,3 16,3" fill="#9E9E9E"/>
+</svg>
